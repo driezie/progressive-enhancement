@@ -6,16 +6,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
+
 			section {
+				position: relative;
+			}
+			section .carrousel {
 				display: flex;
 				overflow: auto;	
 				scroll-snap-type: x mandatory;
 				scrollbar-width: none;
-				
 			}
 
+
 			article {
-				background-color: red;
+				background-color: var(--yellow);
 				padding: 3em;
 				scroll-snap-align: center;
 				width: 80vw;
@@ -25,12 +29,31 @@
 			}
 
 			blockquote {
-				font-family: 'Open Sans', sans-serif;
-				font-size: 1.5em;
+				font-size: 3em;
 				font-style: italic;
 				font-weight: bold;
-				margin: 0;
 			}
+
+			article:nth-child(2n) {
+				background-color: var(--purple);
+			}
+			article:nth-child(3n + 1) {
+				background-color: var(--green);
+			}
+
+			.fdnd-nav {
+				position: absolute;
+				left: 1rem;
+				right: 1rem;
+				bottom: 1rem;
+				width: calc(100% - 2rem);
+				display: flex;
+				justify-content: space-between;
+			}
+
+
+
+
 
 			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
 		</style>
@@ -41,32 +64,43 @@
 	<body>
 		<h1>Carrousel</h1>
 		<section>
-			<article>
-				<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
-			</article>
-			<article>
-				<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
-			</article>
-
-			<article>
-				<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
-			</article>
-			<article>
-				<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
-			</article>
-			<article>
-				<blockquote>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</blockquote>
-			</article>
-			<article>
-				<blockquote>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</blockquote>
-			</article>
-			<article>
-				<blockquote>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</blockquote>
-			</article>
-			<article>
-				<blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote>
-			</article>
+			<div class="carrousel">
+				<article>
+					<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
+				</article>
+				<article>
+					<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
+				</article>
+				<article>
+					<blockquote>“Websites leren bouwen, én praktijkervaring opdoen?”</blockquote>
+				</article>
+				<article>
+					<blockquote>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</blockquote>
+				</article>
+				<article>
+					<blockquote>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</blockquote>
+				</article>
+				<article>
+					<blockquote>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</blockquote>
+				</article>
+				<article>
+					<blockquote>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</blockquote>
+				</article>
+				<article>
+					<blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote>
+				</article>
+			</div>
+			
+			<div class="fdnd-nav">
+				<button class="fdnd-button" id="prev">Vorige</button>
+				<button class="fdnd-button" id="next">Volgende</button>
+			</div>
 		</section>
+		<!-- buttons -->
+
+		
+		
+
 		<details>
 			<!-- 
 				
